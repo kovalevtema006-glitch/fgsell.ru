@@ -1,0 +1,780 @@
+body{
+  background-color: white;
+}
+
+
+menu{
+     position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%); /* Идеально центрирует элемент по горизонтали */
+  text-align: center;
+  width: max-content;          /* Ширина строго по размеру контента */
+  max-width: 90%;   
+  width: 600px;   
+    background: rgba(255, 255, 255, 0); /* Полупрозрачный фон низкой плотности */
+  backdrop-filter: blur(16px);             /* Размытие контента под блоком */
+  -webkit-backdrop-filter: blur(16px);     /* Поддержка для Safari */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Тонкий светлый край стекла */
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2); /* Мягкая объемная тень */
+   
+    list-style: none;
+    margin: 5px 0 5px;
+    padding: 5px 0 5px;
+    background: rgba(175, 174, 173, 0.081);
+    border-radius: 15px;
+    gap: 35px;
+    
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    font-size: 40px;
+    font-family: Inter;
+    font-weight: bold;
+  
+    
+}
+
+
+.menu-main li{
+    display: inline-block;
+    padding: 0 15px;
+     
+}
+
+
+
+.active{
+    background-color: rgba(114, 116, 113, 0.583);
+    border-radius: 15px;
+    transition-duration: 1s;
+    transition-property: filter;
+    background: linear-gradient(-45deg, #7000ff, #0010ff, #00ff8b, #ffef00, #ff5e00, #ff007b);
+  background-size: 400% 400%;
+  
+  /* Быстрая анимация перелива (4 секунды для динамичности) */
+  animation: menuRainbowMove 15s ease infinite;
+  
+  /* Легкий эффект жидкого стекла и объема */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 15px rgba(112, 0, 255, 0.3);
+}
+
+/* Анимация движения цветов */
+@keyframes menuRainbowMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+    
+    
+
+
+
+
+
+
+.menu-main li a:hover {
+    background-color: rgba(150, 153, 150, 0.789);
+    filter: brightness(1.5);
+    border-radius: 15px;
+     color: #080000; /* Меняем текст на белый для читаемости */
+  
+  /* Радужный градиент из вашей картинки */
+  background: linear-gradient(-45deg, #7000ff, #0010ff, #00ff8b, #ffef00, #ff5e00, #ff007b);
+  background-size: 400% 400%;
+  
+  /* Быстрая анимация перелива (4 секунды для динамичности) */
+  animation: menuRainbowMove 4s ease infinite;
+  
+  /* Легкий эффект жидкого стекла и объема */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 15px rgba(112, 0, 255, 0.3);
+}
+
+/* Анимация движения цветов */
+@keyframes menuRainbowMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+    
+    
+    
+
+
+.menu-main li a{
+    transition-duration: 1s;
+    transition-property: filter;
+}
+
+
+/* Новый контейнер, который выстроит игры в ряд и центрирует их */
+.games-container {
+    display: flex;
+    justify-content: center; /* Центрирует карточки по горизонтали */
+    gap: 200px;              /* Красивый фиксированный отступ МЕЖДУ карточками */
+    margin-top: 250px;      /* Отступ ВСЕГО ряда от верхнего меню */
+    width: 100%;
+}
+
+/* Карточка GTA */
+.gta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* Центрирует кнопку под картинкой */
+    padding: 10px;
+    border-radius: 15px;      
+}
+
+/* Карточка Far Cry */
+.farcry {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* Центрирует кнопку под картинкой */
+    padding: 10px;
+    border-radius: 15px;
+}
+
+/* Стили для картинок и кнопок остаются вашими, только добавьте класс кнопки Far Cry */
+.gtabut, .farcrybut, .heartbut, .beambut, .steambut, .cyberbut, .forzabut{
+    background-color: rgb(10, 121, 0);
+    border: none;
+    border-radius: 10px;
+    font-family: Inter;
+    font-size: 50px;
+    color: white;
+    padding: 5px;
+    margin-top: 40px;
+    width: 300px;
+    font-size: 30px;
+    transition-duration: 0.5s;
+    transition-property: filter, scale;
+}
+
+.gtabut:hover, .farcrybut:hover, .heartbut:hover, .beambut:hover, .steambut:hover, .cyberbut:hover, .forzabut:hover{
+    filter: brightness(3);
+    scale: 1.1;
+    transform: translateY(-3px);
+    
+}
+
+.gta img{
+    width: 300px;
+    border-radius: 15px;
+    border: 3px solid rgb(233, 235, 237);
+    box-shadow: 0 10px 20px rgb(0, 0, 0);
+}
+
+
+
+.farcry img{
+     width: 250px;
+    border-radius: 15px;
+    border: 3px solid rgb(233, 235, 237);
+    box-shadow: 0 10px 20px rgb(0, 0, 0);
+}
+
+.heart img{
+    width: 275px;
+    border-radius: 15px;
+    border: 3px solid rgb(233, 235, 237);
+    box-shadow: 0 10px 20px rgb(0, 0, 0);
+}
+
+.heart{
+     display: flex;
+    flex-direction: column;
+    align-items: center;    /* Центрирует кнопку под картинкой */
+    padding: 10px;
+    border-radius: 15px
+}
+
+.beamng img{
+    width: 300px;
+    border-radius: 15px;
+    border: 3px solid rgb(233, 235, 237);
+    box-shadow: 0 10px 20px rgb(0, 0, 0);
+}
+
+.forza img{
+    width: 300px;
+    height: auto;           /* Сохраняет пропорции картинки */
+    border-radius: 15px;
+    border: 3px solid rgb(233, 235, 237);
+    box-shadow: 0 10px 20px rgb(0, 0, 0);
+    border-radius: 15px;
+}
+.forza{
+    margin-left: -1050px;
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* Центрирует кнопку под картинкой */
+    padding: 10px;
+    border-radius: 15px;
+
+}
+.beamng{
+   
+    margin-left: -1050px;
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* Центрирует кнопку под картинкой */
+    padding: 10px;
+    border-radius: 15px;
+    
+    
+}
+
+.steam{
+    
+     display: flex;
+    flex-direction: column;
+    align-items: center;    /* Центрирует кнопку под картинкой */
+    padding: 10px;
+    border-radius: 15px;
+    
+    margin-top: -550px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* Центрирует кнопку под картинкой */
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.steam img{
+    width: 320px;
+     box-shadow: 0 10px 20px rgb(0, 0, 0);
+     
+}
+
+
+
+
+footer{
+    font-family: Arial Black;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 500px;
+    background-color: rgba(0, 128, 0, 0.607);
+    width: 100%;
+    height: 500px;
+}
+
+.steambut{
+  
+    width: 550px;
+    margin-top: 60px;
+    height: 50px;
+    
+}
+    
+
+
+
+h1{
+    text-align: center; padding: 80px;
+    font-family: Inter; font-size: 60px;
+    color: black;
+    
+  
+}
+
+
+
+.menubtn{
+    padding: 20px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    font-size: 30px;
+    border: none;
+    font-family: Arial Black;
+    font-size: 20px;
+    -webkit-border-radius: 0px 40px 40px 40px;
+    -moz-border-radius: 0px 40px 40px 40px;
+    border-radius: 0px 40px 40px 40px;
+    box-shadow: 0px 0px 50px 0px rgba(34, 60, 80, 0.78);
+    transition-duration: 0.5s;
+    transition-property: background;
+     background: rgba(255, 255, 255, 0); /* Полупрозрачный фон низкой плотности */
+  backdrop-filter: blur(16px);             /* Размытие контента под блоком */
+  -webkit-backdrop-filter: blur(16px);     /* Поддержка для Safari */
+  border: 1px solid rgba(255, 255, 255, 0.911); /* Тонкий светлый край стекла */
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2); /* Мягкая объемная тень */
+   
+}
+
+
+
+.menubtn:hover{
+    background-color: rgba(128, 128, 128, 0.72);
+    
+    
+    
+}
+
+.cyber {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* Центрирует кнопку под картинкой */
+    gap: 10px;    /* Расстояние между картинкой и кнопкой */
+    margin-left: 1050px; 
+    margin-top: -1250px;         
+}
+
+/* Стили только для самого изображения */
+.cyber img {
+    width: 300px;
+    height: auto;           /* Сохраняет пропорции картинки */
+    border-radius: 15px;
+    border: 3px solid rgb(233, 235, 237);
+    box-shadow: 0 10px 20px rgb(0, 0, 0);
+    border-radius: 15px;
+    
+} 
+
+
+.cyberbut{
+    margin-top: 80px;
+
+}
+
+
+.logotype{
+    width: 200px;
+     position: fixed;
+    top: 20px;
+    left: 50px;
+    z-index: 9999; 
+    background: rgba(255, 255, 255, 0); /* Полупрозрачный фон низкой плотности */
+  backdrop-filter: blur(16px);             /* Размытие контента под блоком */
+  -webkit-backdrop-filter: blur(16px);     /* Поддержка для Safari */
+  
+  border-radius: 20px;
+  
+   
+}
+
+
+@media (max-width: 768px) {
+  /* Контейнер выстраивает карточки в аккуратную линию вниз */
+  .games-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 40px !important;
+    width: 100% !important;
+    margin: 40px auto !important;
+  }
+
+  /* Карточки становятся меньше и аккуратнее */
+  .gta, .farcry, .heart, .beamng, .forza, .steam, .cyber {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    margin: 0 auto !important; 
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 240px !important; /* Уменьшенная одинаковая ширина для всех карточек */
+  }
+
+  /* ВСЕ картинки подгоняются под меньший аккуратный размер */
+  .games-container img,
+  .gta img, .farcry img, .heart img, .beamng img, .forza img, .steam img, .cyber img {
+    width: 240px !important;      /* Меньшая ширина */
+    height: 320px !important;     /* Пропорциональная аккуратная высота */
+    object-fit: cover !important;  /* Защита от растягивания картинок */
+    border-radius: 15px !important;
+  }
+
+  /* ВСЕ кнопки делаются строго под размер уменьшенной картинки */
+  .gtabut, .farcrybut, .heartbut, .beambut, .steambut, .cyberbut, .forzabut {
+    width: 240px !important;       /* Ширина точно по картинке */
+    height: 65px !important;       /* Одинаковая фиксированная высота для всех кнопок */
+    margin-top: 20px !important;
+    padding: 5px 10px !important;
+    font-size: 18px !important;    /* Шрифт чуть уменьшен, чтобы длинный текст влез в кнопку */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+    white-space: normal !important; /* Позволяет длинному тексту кнопки Steam переноситься на новую строку */
+  }
+
+
+  .logotype{
+    position: absolute;
+    width: 0;
+    top: 60px;
+    left: 220px;
+    border-radius: 10px;
+
+  }
+
+  
+
+
+  .footer{
+   
+   position: static !important; /* Отменяет абсолютное позиционирование */
+  width: 100% !important;
+  margin-top: 50px !important;  /* Аккуратный отступ от последней карточки игры */
+  padding: 20px 0 !important;
+  }
+
+
+  h1::before{
+    top: 290px !important;
+  }
+
+   #tbank-pop p{
+    height: 30px;
+    width: fit-content;
+   }
+
+
+   .menu-main{
+    width: 150px;
+    
+    position: absolute;
+    top: 20px;
+    left: 190px;
+    width: 150px;
+    z-index: 9999;
+   }
+
+
+   h1{
+    margin-top: 300px;
+   }
+}
+
+.footer{
+
+  position: absolute;
+  left: 0;
+  top: 2500px;
+  width: 100%;
+  height: 650px;
+  background-color: rgb(72, 71, 71);
+}
+
+
+
+.footer p{
+  
+  
+  color: rgb(10, 0, 0);
+  font-size: 20px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+      transition-duration: 1s;
+    transition-property: filter;
+    background: linear-gradient(-45deg, #7000ff, #0010ff, #00ff8b, #ffef00, #ff5e00, #ff007b);
+  background-size: 400% 400%;
+  
+  /* Быстрая анимация перелива (4 секунды для динамичности) */
+  animation: menuRainbowMove 15s ease infinite;
+  
+  /* Легкий эффект жидкого стекла и объема */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 15px rgba(112, 0, 255, 0.3);
+  max-width: max-content; 
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px auto;
+}
+
+/* Анимация движения цветов */
+@keyframes menuRainbowMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+
+ 
+}
+
+
+
+h1::before{
+  background-color: black;
+  content: '';
+    font-size: 25px;
+    background-color: #27892c;
+    height: 3px;
+    width: 500px;
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+
+
+/* ======== Модалка авторизации ======== */
+
+.auth-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.auth-modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.auth-box {
+    background: #56f451;
+    color: #fff;
+    padding: 32px 28px;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 380px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+    position: relative;
+    text-align: center;
+    transform: translateY(20px);
+    transition: transform 0.35s ease;
+    font-family: 'Inter', sans-serif;
+}
+
+.auth-modal.show .auth-box {
+    transform: translateY(0);
+}
+
+.auth-close {
+    position: absolute;
+    top: 10px;
+    right: 16px;
+    font-size: 26px;
+    color: #888;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s;
+}
+
+.auth-close:hover {
+    color: #fff;
+}
+
+.auth-box h2 {
+    margin: 0 0 20px;
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.auth-box input {
+    display: block;
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 12px;
+    border: 1px solid #333;
+    border-radius: 10px;
+    background: #2a2a2c;
+    color: #fff;
+    font-size: 15px;
+    box-sizing: border-box;
+    outline: none;
+    transition: border 0.2s;
+}
+
+.auth-box input:focus {
+    border-color: #e8d900;
+}
+
+.auth-box input::placeholder {
+    color: #777;
+}
+
+.auth-box button {
+    padding: 12px 16px;
+    border: none;
+    border-radius: 10px;
+    background: #f0f1f0;
+    color: #111;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    transition: transform 0.15s, background 0.2s;
+    width: 100%;
+    margin-bottom: 10px;
+    font-family: inherit;
+}
+
+.auth-box button:hover {
+    background: #117e00bf;
+    transform: scale(1.02);
+}
+
+.auth-box #result,
+.auth-box #profileResult {
+    min-height: 20px;
+    font-size: 14px;
+    color: #100d00;
+    margin: 12px 0 0;
+}
+
+
+
+/* Контейнер в левом верхнем углу */
+.download {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+/* Сама ссылка */
+.download a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: #15eb38;
+  color: #fff;
+  text-decoration: none;
+  font-family: Inter;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(59, 245, 2, 0.995);
+  transition: all 0.2s ease;
+}
+
+.download a:hover {
+  background: #009516;
+  box-shadow: 0 6px 16px rgba(0, 80, 4, 0.35);
+  transform: translateY(-1px);
+}
+
+.download a:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(26, 115, 232, 0.25);
+}
+
+/* Иконка скачивания через псевдоэлемент */
+.download a::before {
+  content: "📄";
+  font-size: 16px;
+}
+
+/* Адаптив для телефонов */
+@media (max-width: 600px) {
+  .download {
+    top: 220px;
+    left: 120px;
+    width: 80px;
+  }
+  .download a {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+}
+
+
+/* ===== Базовый сброс ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, sans-serif;
+
+  /* Переливающийся фон, следующий за курсором */
+  background: radial-gradient(
+    circle at var(--x, 50%) var(--y, 50%),
+    #ffffff 0%,
+    #e8f8ec 35%,
+    #04f348 70%,
+    #00f33d 100%
+  );
+  background-attachment: fixed;
+  transition: background 0.15s ease-out;
+  overflow-x: hidden;
+}
+
+
+#myModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Полупрозрачный черный фон */
+  display: none; /* Изначально скрыто */
+  justify-content: center;
+  align-items: center;
+  z-index: 99999; /* Поверх всех остальных элементов сайта */
+}
+
+/* Белый блок по центру экрана */
+.modal-content {
+  background: #f9f8f8;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+/* Настройки строки с галочкой */
+.checkbox-label {
+  font-family: sans-serif;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none; /* Запрещает выделение текста при клике */
+}
+
+/* Размер самого квадратика галочки */
+.checkbox-label input {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+

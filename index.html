@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Lato:wght@100;300;400;700;900&family=Roboto:wght@100..900&display=swap" rel="stylesheet">
+    <title>FastSell</title>
+
+    <!-- 1. Библиотека Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <!-- 2. Твой конфиг -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+
+    <!-- Окно -->
+<div id="tbank-pop" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); justify-content:center; align-items:center; z-index:9999; font-family:sans-serif;">
+  <div style="background:#e8d900; padding:25px; border-radius:12px; text-align:center; max-width:320px; width:85%; position:relative; box-shadow:0 4px 15px rgba(0,0,0,0.2);">
+    <span onclick="document.getElementById('tbank-pop').style.display='none'" style="position:absolute; top:8px; right:12px; font-size:24px; cursor:pointer; color:#aaa;">&times;</span>
+    <p style="margin:10px 0 0; font-size:18px; font-weight:bold; color:#333;">Оплату принимаем только через TBank</p>
+  </div>
+</div>
+
+<!-- Скрипт автопоказа -->
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => { document.getElementById('tbank-pop').style.display = 'flex'; }, 3000);
+  });
+</script>
+
+
+
+      <img class="logotype" src="logo.png" alt="FastSell">
+    <h1>Хиты продаж</h1>
+
+    <menu class="menu-main">
+ 
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Games</a></li>
+        <li><a href="disclaimer.txt" download>FAQ</a></li>
+    </menu>
+
+      <!-- Общий контейнер для игр -->
+    <div class="games-container">
+        
+        <div class="gta">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxybRCLiQ4xCUZpfrsJblsmnvQ2pPtJKzZ9iMpkvbsRw&s">
+            <a href="https://kovalevtema006-glitch.github.io/fgsellpayment.ru/"><button class="gtabut">Купить 1999руб</button></a>
+        </div>
+
+        <div class="farcry">
+            <img src="https://upload.wikimedia.org/wikipedia/ru/d/d6/Far_cry_6.jpeg?utm_source=ru.wikipedia.org&utm_campaign=index&utm_content=original">
+            <a href="https://kovalevtema006-glitch.github.io/fgsellpayment.ru/"><button class="farcrybut">Купить 1999руб</button></a>
+            
+        </div>
+
+        <div class="heart">
+            <img src="https://avatars.mds.yandex.net/get-mpic/15243080/game_badge_2a4398bf-8e46-4bef-9f58-910cd2e1e94d/orig">
+            <a href="https://kovalevtema006-glitch.github.io/fgsellpayment.ru/">
+                <button class="heartbut">Купить 1299руб</button>
+            </a>
+        </div>
+
+    </div> <!-- /games-container -->
+
+
+    <div class="games-container2">
+
+        <div class="beamng">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTB6rrdQzxuU0wE0d2h37J8-CCUfFZ55__cY13ipjdHuw&s=10">
+            <a href="https://kovalevtema006-glitch.github.io/fgsellpayment.ru/">
+                <button class="beambut">Купить 899руб</button>
+            </a>
+        </div>
+
+        <div class="steam">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuqx6Kl2jTXAISvVwhjai3Gz7CSne0F3F0oHOl243Lig&s=10">
+            <a href="https://kovalevtema006-glitch.github.io/fgsellpayment.ru/">
+                <button class="steambut">Купить (1 Steam RUB = 1.8руб)</button>
+            </a>
+
+        </div>
+
+        <div class="forza">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3eTRClhbMdrniNJTCO3yQNyplrr3_0EwuxQbmIEFVyA&s=10">
+            <a href="https://kovalevtema006-glitch.github.io/fgsellpayment.ru/">
+                <button class="forzabut">Купить 1199руб</button>
+            </a>
+        </div>
+
+
+        <div class="cyber">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTABfX4nv28kQPfnHxgg-tKoedhi-hT_Z8_L5kv_5lytQ&s=10">
+            <a href="https://kovalevtema006-glitch.github.io/fgsellpayment.ru/">
+                <button class="cyberbut">Купить 1199руб</button>
+            </a>
+        </div>
+    </div>
+
+
+            <div class="menubut">
+                <a href="#">
+                    <button class="menubtn">Поддержка</button>
+                </a>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+<div id="auth-modal" class="auth-modal">
+  <div class="auth-box">
+    <span class="auth-close" onclick="document.getElementById('auth-modal').classList.remove('show')">&times;</span>
+
+    <h2>Регистрация</h2>
+
+    <input id="email" placeholder="Твоя почта">
+    <input id="password" type="password" placeholder="Пароль">
+
+    <button onclick="register()">Зарегистрироваться</button>
+    <button onclick="login()">Войти</button>
+
+    <p id="result"></p>
+
+    <h2>Мой профиль</h2>
+
+    <input id="nickname" placeholder="Твой никнейм">
+
+    <button onclick="saveNickname()">Сохранить никнейм</button>
+
+    <p id="profileResult"></p>
+  </div>
+</div>
+
+<script>
+  // Показать модалку через 1 секунду
+  setTimeout(() => {
+    document.getElementById('auth-modal').classList.add('show');
+  }, 1000);
+
+  async function register() {
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
+      const result = document.getElementById("result");
+
+      if (!email || !password) {
+          result.textContent = "Введите почту и пароль";
+          return;
+      }
+
+      const { data, error } = await supabase.auth.signUp({
+          email: email,
+          password: password
+      });
+
+      if (error) {
+          result.textContent = "Ошибка: " + error.message;
+          return;
+      }
+
+      result.textContent = "Регистрация прошло успешна!";
+      console.log("User:", data.user);
+  }
+
+  async function login() {
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
+      const result = document.getElementById("result");
+
+      if (!email || !password) {
+          result.textContent = "Введите почту и пароль";
+          return;
+      }
+
+      const { data, error } = await supabase.auth.signInWithPassword({
+          email: email,
+          password: password
+      });
+
+      if (error) {
+          result.textContent = "Ошибка входа: " + error.message;
+          return;
+      }
+
+      result.textContent = "Ты вошёл как " + data.user.email;
+  }
+
+  async function saveNickname() {
+      const nickname = document.getElementById("nickname").value.trim();
+      const profileResult = document.getElementById("profileResult");
+
+      if (!nickname) {
+          profileResult.textContent = "Введи ник";
+          return;
+      }
+
+      const { data: { user } } = await supabase.auth.getUser();
+
+      if (!user) {
+          profileResult.textContent = "Сначала войди в аккаунт!";
+          return;
+      }
+
+      const { error } = await supabase
+          .from("profiles")
+          .upsert({ id: user.id, nickname: nickname });
+
+      if (error) {
+          profileResult.textContent = "Ошибка: " + error.message;
+          return;
+      }
+
+      profileResult.textContent = "Ник сохранён: " + nickname;
+  }
+</script>
+
+
+
+<div class="download">
+ <a href="disclaimer.txt" download>Пользовательское соглашение</a>
+</div>
+
+
+  <script>
+    const body = document.body;
+
+    document.addEventListener('mousemove', (e) => {
+      const x = (e.clientX / window.innerWidth) * 100;
+      const y = (e.clientY / window.innerHeight) * 100;
+      body.style.setProperty('--x', x + '%');
+      body.style.setProperty('--y', y + '%');
+    });
+
+    document.addEventListener('touchmove', (e) => {
+      const touch = e.touches[0];
+      const x = (touch.clientX / window.innerWidth) * 100;
+      const y = (touch.clientY / window.innerHeight) * 100;
+      body.style.setProperty('--x', x + '%');
+      body.style.setProperty('--y', y + '%');
+    }, { passive: true });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Структура модального окна -->
+  <div id="myModal">
+    <div class="modal-content">
+      <label class="checkbox-label">
+        <input type="checkbox" id="closeCheckbox">
+        Соглашаюсь с политикой сайта
+      </label>
+    </div>
+  </div>
+
+  <!-- Подключаем логику скрипта JS -->
+  <script src="script.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+</body>
+</html>
